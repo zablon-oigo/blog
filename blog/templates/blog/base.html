@@ -8,7 +8,13 @@
     </title>
 </head>
 <body>
+    {% if messages %}
+      {% for message in messages %}
+    {{message}}
+    {% endfor %}
+    {% endif %}
     <main class="">
+        <a href="{% url 'blog:create' %}" class="">create</a>
         {% block content %}
         {% endblock %}
     </main>
