@@ -1,0 +1,39 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Login
+{% endblock %}
+{% block content  %}
+ <form action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+    {{form.non_field_errors}}
+    <div class="">
+        <label for="">Username</label>
+        {{form.username}}
+    </div>
+    <div class="">
+        <label for="">Email</label>
+        {{form.email}}
+    </div>
+    <div class="">
+        <label for="">Password</label>
+        {{form.password1}}
+    </div>
+    <div class="">
+        <label for="">Repeat Password</label>
+        {{form.password2}}
+    </div>
+    <div class="">
+        {% if form.errors or form.non_field_errors %}
+        <div class="">
+            {% for field in form %}
+            {{field.errors}}
+            {% endfor %}
+            {{form.non_field_errors}}
+        </div>
+        {% endif %}
+           
+    </div>
+    <input type="submit" value="Register" class="">
+ </form>
+ {% endblock %}
