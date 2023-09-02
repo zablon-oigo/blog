@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block title %} {{post.title}} {% endblock %}
+
+
+{% block content %}
+<h2 class="">{{post.title}}</h2>
+{% if post.image %}
+<img src="{{post.image.url}}" alt="{{post.title}}">
+{% endif  %}
+<p class="">{{post.content}}</p>
+<p>published by {{post.author|title}} on <span>{{post.published_at | date:"M d, Y"}}</span></p>
+<a href="{% url 'blog:home' %}" class=""> Go back</a>
+{% endblock %}
