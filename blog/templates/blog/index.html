@@ -6,10 +6,10 @@
   <div class="max-w-4xl mx-auto grid grid-rows-1 sm:grid-cols-3 gap-3 px-6 py-12 bg-gray-100">
     {% if posts %}
     {% for post in posts %}  
- <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+ <div class="max-w-sm  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
      <a href="{{post.get_absolute_url}}">
          {% if post.image %}
-         <img class="rounded-t-lg w-sm" src="{{post.image.url }}" alt="{{post.title}}" />
+         <img class="rounded-t-lg h-64 w-full sm:w-96 " src="{{post.image.url }}" alt="{{post.title}}" />
          {% endif %}
      </a>
      <div class="p-5">
