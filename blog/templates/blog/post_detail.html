@@ -8,11 +8,12 @@
     <div class="p-6">
         <h2 class="text-4xl font-semibold">{{post.title}}</h2>
         <hr class="border-t border-gray-300 my-4 w-1/4">
+        <p>published by <span class="font-medium">{{post.author|title}}</span> on <span class="font-medium">{{post.published_at | date:"M d, Y"}}</span></p>
+
         {% if post.image %}
         <img src="{{post.image.url}}" alt="{{post.title}}" class="object-center object-cover h-80 w-full rounded-xl ">
         {% endif  %}
         <p class="first-letter:text-6xl first-letter:font-bold text-lg block">{{post.content}}</p>
-        <p>published by <span class="font-medium">{{post.author|title}}</span> on <span class="font-medium">{{post.published_at | date:"M d, Y"}}</span></p>
         <div class="flex justify-between items-center flex-col sm:flex-row">
             <a href="{% url 'blog:home' %}" class=" my-4 inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 <svg class="w-6 h-6 text-white m-1 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">

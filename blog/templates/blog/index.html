@@ -3,6 +3,24 @@
 {% block title %} Home {% endblock %}
 
 {% block content %}
+ <section class="container max-w-4xl mx-auto  ">
+        <div class="relative ">
+            {% load static %}
+            <img src="{% static '/image/header.jpg' %}" alt="header image" class="object-center object-cover opacity-60 ">
+            <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full text-3xl text-center overflow-hidden ">
+                <div class="h-full flex items-center justify-center flex-col">
+                    <p class="sm:text-6xl text-4xl text-slate-800  font-bold">Welcome to <span class="text-indigo-500 ">DjangoBlog</span> </p>
+                    <p class="text-2xl font-medium text-slate-800 ">Exploring Ideas, Insights, and Inspiration....</p>
+                </div>
+               
+            </div>
+            
+        </div>
+ </section>
+ <div class="max-w-4xl mx-auto flex justify-start items-center m-2 flex-col w-full">
+    <h2 class="text-3xl font-semibold">Recent Blogs</h2>
+ <hr class="border-t border-gray-500 my-4 w-20">
+ </div>
   <div class="max-w-4xl mx-auto grid grid-rows-1 sm:grid-cols-3 gap-3 px-6 py-12 bg-gray-100">
     {% if posts %}
     {% for post in posts %}  
