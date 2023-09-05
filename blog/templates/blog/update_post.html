@@ -5,10 +5,20 @@
 {% endblock %}
 
 {% block content %}
- <form action="" method="post" enctype="multipart/form-data">
-
+<div class="max-w-sm m-4 mx-auto p-6 rounded-xl shadow-2xl">
+  <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Update">
+    {% for field in form %}
+    <label for="" class="text-xl font-semibold block w-full mb-2">{{field.label_tag}}</label>
+    {{field}}
+    {% endfor%}
+    <input type="submit" value="Update" class="mt-2 px-6 py-4 rounded-xl w-full bg-teal-500 hover:bg-teal-700 text-white font-semibold">
+
  </form>
+ <div class="w-full mt-6 flex items-center justify-center">
+  <a href="{{post.get_absolute_url}}" class="px-6 py-4 text-center rounded-xl w-full bg-red-500 hover:bg-red-700 text-white font-semibold">Cancel</a>
+
+ </div>
+</div>
+
 {% endblock %}

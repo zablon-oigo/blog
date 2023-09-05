@@ -4,6 +4,7 @@ from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from .models import Post
 from django.urls import reverse_lazy
 from django.contrib import messages
+from .forms import PostForm
 class BlogListView(ListView):
     model=Post
     template_name='blog/index.html'
@@ -15,8 +16,7 @@ class BlogDetailView(DetailView):
     template_name='blog/post_detail.html'
 
 class CreateBlogView(CreateView):
-    model=Post
-    fields=['title','image','content',]
+    form_class=PostForm
     template_name='blog/create.html'
    
     def form_valid(self, form):
@@ -26,7 +26,7 @@ class CreateBlogView(CreateView):
 
 class BlogUpdateView(UpdateView):
     model=Post
-    fields=['title','image','content',]
+    form_class=PostForm
     template_name='blog/update_post.html'
     # success_url=reverse_lazy('blog:home')
 
