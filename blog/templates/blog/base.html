@@ -19,11 +19,11 @@
               <div class="space-x-6">
                   {% if request.user.is_authenticated %}
                 <a href="{% url 'blog:create' %}" class="border-2 border-green-500 rounded-xl bg-white text-black hover:text-gray-500 px-6 py-3  text-xl font-semibold ">Create</a>
-                <a href="{% url 'logout' %}" class="text-xl font-semibold  text-slate-800 hover:text-slate-500">Logout</a>
+                <a href="{% url 'users:logout' %}" class="text-xl font-semibold  text-slate-800 hover:text-slate-500">Logout</a>
                 {% else %}
             
-                <a href="{% url 'login' %}" class="text-xl font-semibold  text-slate-800 hover:text-slate-500">Login</a>
-                <a href="{% url 'register' %}" class="border-2 border-green-500 bg-white rounded-lg py-3 px-6  text-xl text-black hover:text-gray-500 font-semibold">register</a>
+                <a href="{% url 'users:login' %}" class="text-xl font-semibold  text-slate-800 hover:text-slate-500">Login</a>
+                <a href="{% url 'users:register' %}" class="border-2 border-green-500 bg-white rounded-lg py-3 px-6  text-xl text-black hover:text-gray-500 font-semibold">register</a>
                  {% endif %}
               </div>
         </nav>
@@ -86,9 +86,9 @@
                 <div class=" p-4 sm-w-1/4 w-full">
                     <h2 class=" text-2xl font-semibold">Socials</h2>
                     <div class="m-2 space-x-6">
-                        <a href="" class="bg-blue-700 text-white  rounded-sm p-1"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="" class="bg-blue-500 rounded-sm text-white p-1 "><i class="fa-brands fa-facebook"></i></a>
-                        <a href="" class="bg-red-500 rounded-sm p-1 text-white"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="" class="bg-blue-700 text-white  rounded-full mx-1 h-9 w-9 p-1"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="" class="bg-blue-500 rounded-full h-9 w-9 mx-1 text-white p-1 "><i class="fa-brands fa-facebook"></i></a>
+                        <a href="" class="bg-red-500 rounded-full h-9 w-9 mx-1 p-1 text-white"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
 

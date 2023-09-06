@@ -7,7 +7,7 @@ Login
      <div class="flex items-center flex-col">
               
         <h2 class="text-3xl font-semibold">Register</h2>
-    <form action="{% url 'register' %}" method="post">
+    <form action="{% url 'users:register' %}" method="post">
         {% csrf_token %}
         {{form.non_field_errors}}
         <div class="">
@@ -38,7 +38,7 @@ Login
                
         </div>
         <input type="submit" value="Register" class="m-2 bg-teal-500 py-4 px-6 w-full mx-auto hover:bg-teal-700 rounded-xl font-semibold text-white">
-        <p class="text-base">Already have an account ?<span class="text-teal-500 underline"><a href="{% url 'login' %}">Login</a></span></p>
+        <p class="text-base">Already have an account ?<span class="text-teal-500 underline"><a href="{% url 'users:login' %}">Login</a></span></p>
      </form>
      </div> 
     

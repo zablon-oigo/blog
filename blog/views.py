@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView,DetailView
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from .models import Post
@@ -11,11 +12,11 @@ class BlogListView(ListView):
     context_object_name='posts'
 
 
-class BlogDetailView(DetailView):
+class BlogDetailView(LoginRequiredMixin,DetailView):
     model=Post
     template_name='blog/post_detail.html'
 
-class CreateBlogView(CreateView):
+class CreateBlogView(LoginRequiredMixin,CreateView):
     form_class=PostForm
     template_name='blog/create.html'
    
@@ -24,7 +25,7 @@ class CreateBlogView(CreateView):
         messages.success(self.request,'The post was created successfully')
         return super(CreateBlogView,self).form_valid(form)
 
-class BlogUpdateView(UpdateView):
+class BlogUpdateView(LoginRequiredMixin,UpdateView):
     model=Post
     form_class=PostForm
     template_name='blog/update_post.html'
@@ -34,7 +35,7 @@ class BlogUpdateView(UpdateView):
         messages.success(self.request,"The post was updated successfully")
         return super(BlogUpdateView,self).form_valid(form)
 
-class DeleteBlogView(DeleteView):
+class DeleteBlogView(LoginRequiredMixin,DeleteView):
     model=Post
     template_name='blog/delete_post.html'
     success_url=reverse_lazy('blog:home')
