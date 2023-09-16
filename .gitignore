@@ -1,3 +1,4 @@
-Pipfile*
-*.lock
-vercel.json
+
+blog_project\__pycache__
+blog\__pycache__
+users\__pycache__
