@@ -51,7 +51,7 @@
     </header>
     
     <main class="widescreen:section-min-height tallscreen:section-min-height ">
-        {% if messages %}
+      
         <div class="max-w-sm mx-auto p-2">
           {% if messages %}
           {% for message in messages %}
@@ -71,8 +71,9 @@
               </div>
               </div>
             {% endfor %}
+            {% endif %}
           </div>
-          {% endif %}
+      
         {% block content %}
         {% endblock %}
     </main>
