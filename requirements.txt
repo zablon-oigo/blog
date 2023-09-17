@@ -22,7 +22,6 @@ requests==2.28.2
 rjsmin==1.2.1
 sqlparse==0.4.3
 svgwrite==1.4.3
-tailwindcss==0.0.1
 Tree==0.2.4
 tzdata==2022.7
 urllib3==1.26.15
