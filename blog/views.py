@@ -13,9 +13,15 @@ class BlogListView(ListView):
     context_object_name='posts'
 
 
-class BlogDetailView(LoginRequiredMixin,DetailView):
-    model=Post
-    template_name='blog/post_detail.html'
+# class BlogDetailView(LoginRequiredMixin,DetailView):
+#     model=Post
+#     template_name='blog/post_detail.html'
+    
+def post_detail(request,post,pk):
+    post=get_object_or_404(Post, pk=pk, slug=post)
+    comments=post.comments.filter(is_active=True)
+    form=CommentForm()
+    return render(request,'blog/post_detail.html',{'post':post,'comments':comments,'form':form})
 
 class CreateBlogView(LoginRequiredMixin,CreateView):
     form_class=PostForm

@@ -33,4 +33,10 @@ class PostForm(forms.ModelForm):
 class CommentForm(ModelForm):
     class Meta:
         model=Comment
-        fields=['name','body']
+        fields=['body']
+        widgets={
+            'body':forms.Textarea(attrs={
+                'placehodler':'Comment here.....',
+                'class':'px-6 py-4 h-32 w-full rounded-lg border border-gray-600'
+            })
+        }

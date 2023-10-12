@@ -4,8 +4,12 @@
 
 {% block content %}
 {% if comment %}
-<h2 class="text-3xl">Your comment has been added.</h2>
-<a href="{{post.get_absolute_url}}" class="">Back to the post</a>
+<div class="max-w-md mx-auto bg-white rounded-lg shadow-2xl p-6">
+    <div class="my-10">
+        <h2 class="text-3xl">Your comment has been added.</h2>
+    <a href="{{post.get_absolute_url}}" class="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-6 py-4">Back to the post</a>
+    </div>
+</div>
 {% else %}
 {% include 'blog/comment_form.html' %}
 {% endif %}

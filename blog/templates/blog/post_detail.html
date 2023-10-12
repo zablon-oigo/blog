@@ -30,6 +30,23 @@
            </div>
         </div>
     </div>
+    <div class="max-w-md bg-white rounded-lg shadow-2xl ">
+        {% with comments.count as total_comments %}
+        <h3 class="text-gray-500 font-medium">{{total_comments}} comment{{total_comments|pluralize}}</h3>
+        {% endwith %}
+        <hr class="border border-gray-600 w-1/2 mx-auto">
+        {% for comment in comments %}
+        <div class="bg-gray-100 rounded-lg shadow px-6 py-4 w-full">
+            <p class="text-sm">Comment {{forloop.counter}} by {{comment.name}} {{comment.created}}</p>
+            <p class="text-xl text-gray-600 font-light">
+                {{comment.body|linebreaks}}
+            </p>
+        </div>
+        {% empty %}
+        <p class="text-3xl text-gray-600 font-semibold">There are no comments.</p>
+        {% endfor %}
+        {% include 'blog/comment_form.html' %}
+    </div>
     
 </div>
 
