@@ -20,7 +20,9 @@ https://blog-app-lpq3.onrender.com
 
 
 ![Screenshot 2023-10-10 at 07-32-28 Sunrise Blog](https://github.com/zablon-oigo/blog/assets/143833326/be36f4db-63a9-4ce2-a762-4b399765e7c4)
+![Screenshot 2023-10-12 at 11-49-18 Sunrise Blog](https://github.com/zablon-oigo/blog/assets/143833326/b3a1019d-eae3-4773-9b97-6cc0e06952c1)
 
+![Screenshot 2023-10-12 at 11-49-48 Document](https://github.com/zablon-oigo/blog/assets/143833326/23957142-6691-4b9b-afd4-d2cdc0084460)
 
 
 ![Screenshot 2023-10-10 at 07-33-13 Create Blog](https://github.com/zablon-oigo/blog/assets/143833326/c5bc6a47-32fe-4f34-8a97-b2d65ea9c484)
