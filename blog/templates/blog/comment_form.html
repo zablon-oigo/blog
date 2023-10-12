@@ -1,9 +1,5 @@
-{% extends 'blog/base.html' %}
 
-{% block title%} Comment Form {% endblock %}
-
-{% block content %}
-<div class="max-w-md mx-auto shadow-2xl bg-white p-6 rounded-lg">
+<div class="max-w-xl mx-auto shadow-2xl bg-white p-6 rounded-lg">
     <h2 class="text-4xl font-semibold text-center text-gray-800">Add a new Comment</h2>
     <form action="{% url 'blog:post_comment' post.id %}" method="post">
         {% csrf_token %}
@@ -17,4 +13,3 @@
     </form>
 </div>
 
-{% endblock %}

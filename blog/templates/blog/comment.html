@@ -1,16 +1,21 @@
-{% extends 'blog/base.html' %}
-
-{% block title%} Comment {% endblock %}
-
-{% block content %}
-{% if comment %}
-<div class="max-w-md mx-auto bg-white rounded-lg shadow-2xl p-6">
-    <div class="my-10">
-        <h2 class="text-3xl">Your comment has been added.</h2>
-    <a href="{{post.get_absolute_url}}" class="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-6 py-4">Back to the post</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    {% if comment %}
+    <div class="max-w-md mx-auto bg-white rounded-lg shadow-2xl p-6">
+        <div class="my-10">
+            <h2 class="text-3xl my-6">Your comment has been added.</h2>
+        <a href="{{post.get_absolute_url}}" class="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-6 py-4">Back to the post</a>
+        </div>
     </div>
-</div>
-{% else %}
-{% include 'blog/comment_form.html' %}
-{% endif %}
-{% endblock %}
+    {% else %}
+    {% include 'blog/comment_form.html' %}
+    {% endif %} 
+</body>
+</html>

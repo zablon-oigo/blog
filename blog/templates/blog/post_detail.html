@@ -30,13 +30,13 @@
            </div>
         </div>
     </div>
-    <div class="max-w-md bg-white rounded-lg shadow-2xl ">
+    <div class="max-w-xl mx-auto bg-white rounded-lg shadow-2xl p-8">
         {% with comments.count as total_comments %}
         <h3 class="text-gray-500 font-medium">{{total_comments}} comment{{total_comments|pluralize}}</h3>
         {% endwith %}
-        <hr class="border border-gray-600 w-1/2 mx-auto">
+        <hr class="border border-gray-600 w-full mx-auto">
         {% for comment in comments %}
-        <div class="bg-gray-100 rounded-lg shadow px-6 py-4 w-full">
+        <div class="bg-gray-100 rounded-lg shadow px-6 py-4 w-full m-4">
             <p class="text-sm">Comment {{forloop.counter}} by {{comment.name}} {{comment.created}}</p>
             <p class="text-xl text-gray-600 font-light">
                 {{comment.body|linebreaks}}
