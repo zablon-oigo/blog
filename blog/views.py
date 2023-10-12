@@ -1,11 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView,DetailView
 from django.views.generic.edit import CreateView,UpdateView,DeleteView
 from .models import Post
 from django.urls import reverse_lazy
 from django.contrib import messages
-from .forms import PostForm
+from .forms import PostForm, CommentForm
+from django.views.decorators.http import require_POST
 class BlogListView(ListView):
     model=Post
     template_name='blog/index.html'
@@ -44,3 +45,14 @@ class DeleteBlogView(LoginRequiredMixin,DeleteView):
         messages.success(self.request,'The post has been deleted successfully')
         return super(DeleteBlogView,self).form_valid(form)
 
+@require_POST
+def post_comment(request, post_id):
+    post=get_object_or_404(Post, id=post_id)
+    comment=None
+    form=CommentForm(data=request.POST)
+    if form.is_valid():
+        comment=form.save(commit=False)
+        comment.post=post
+        comment.name=request.user.username
+        comment.save()
+    return render(request,'blog/comment.html',{'post':post,'form':form,'comment':comment})

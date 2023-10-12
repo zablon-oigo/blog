@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import Post
+from .models import Post,Comment
 
 class PostForm(forms.ModelForm):
     class Meta:
@@ -28,3 +28,9 @@ class PostForm(forms.ModelForm):
         'placeholder':'write your creative thoughts here...',
         'class':'border border-gray-500 rounded-lg h-48 w-full p-2'
     }))
+
+
+class CommentForm(ModelForm):
+    class Meta:
+        model=Comment
+        fields=['name','body']
