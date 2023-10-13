@@ -7,6 +7,7 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from .forms import PostForm, CommentForm
 from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
 class BlogListView(ListView):
     model=Post
     template_name='blog/index.html'
@@ -50,7 +51,8 @@ class DeleteBlogView(LoginRequiredMixin,DeleteView):
     def form_valid(self,form):
         messages.success(self.request,'The post has been deleted successfully')
         return super(DeleteBlogView,self).form_valid(form)
-
+    
+@login_required
 @require_POST
 def post_comment(request, post_id):
     post=get_object_or_404(Post, id=post_id)
