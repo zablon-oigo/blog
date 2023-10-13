@@ -17,7 +17,7 @@ class BlogListView(ListView):
 # class BlogDetailView(LoginRequiredMixin,DetailView):
 #     model=Post
 #     template_name='blog/post_detail.html'
-    
+@login_required   
 def post_detail(request,post,pk):
     post=get_object_or_404(Post, pk=pk, slug=post)
     comments=post.comments.filter(is_active=True)
