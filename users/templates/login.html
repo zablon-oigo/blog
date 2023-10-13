@@ -5,14 +5,21 @@ Login
 {% endblock %}
 {% block content %}
 <div class="m-8 rounded-xl max-w-sm mx-auto bg-gray-100 p-6 shadow-2xl">
-    <div class="w-full flex flex-col items-center">
+    <div class="w-full flex flex-col items-center relative">
         <h2 class="text-3xl font-semibold mb-2">Login</h2>
-        <form action="{% url 'users:login' %}" method="post">
-            {% csrf_token %}
-             {% for field in form %}
-             <label for="" class="font-semibold text-xl">{{field.label}}</label>
-             {{field}}
-             {% endfor%}
+        <div class="relative">
+            <form action="{% url 'users:login' %}" method="post">
+                {% csrf_token %}
+                 {% for field in form %}
+                 <label for="" class="font-semibold text-xl">{{field.label}}</label>
+                 {{field}}
+                
+                 {% endfor%}
+                 <div class="absolute  right-3 bottom-4">
+                    <i class="fa-solid fa-eye-slash" style="color: #000000;" id="toggleEye"></i>
+                 </div>
+        </div>
+        
             <input type="submit" value="Login" class="bg-teal-500 py-4 px-6 w-full mx-auto hover:bg-teal-700 rounded-xl font-semibold text-white">
             <p class="m-3 text-base">Don't have an account ?<span class="text-teal-500 underline"><a href="{% url 'users:register' %}">Register</a></span></p>
         </form>

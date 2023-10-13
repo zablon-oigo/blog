@@ -36,4 +36,12 @@ const myButton=()=>{
 }
 document.addEventListener('DOMContentLoaded',myButton)
 
-// close menu button
+// Toogle Password
+
+const password=document.querySelector('#id_password')
+const toggleEye=document.querySelector('#toggleEye')
+toggleEye.addEventListener('click',()=>{
+    let type=password.getAttribute('type') === 'password'?'text':'password';
+    password.setAttribute('type',type)
+    toggleEye.classList.toggle("fa-eye")
+})
