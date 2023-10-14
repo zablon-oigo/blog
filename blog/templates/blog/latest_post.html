@@ -1,0 +1,4 @@
+
+{% for post latest_post %}
+<p class="text-xl"><a href="{{post.get_absolute_url}}">{{post.title}}</a></p>
+{% endfor %}
