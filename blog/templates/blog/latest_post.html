@@ -1,4 +1,6 @@
-
-{% for post latest_post %}
+{% extends 'blog/base.html'%}
+{% block content %}
+{% for post in latest_post %}
 <p class="text-xl"><a href="{{post.get_absolute_url}}">{{post.title}}</a></p>
 {% endfor %}
+{% endblock %}
