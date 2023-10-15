@@ -74,13 +74,8 @@
             {% endfor %}
             {% endif %}
           </div>
-          <div class="">
-            {% comment %}
-            <p class="text-xl">We have {% total_post %} so far</p>
-           
-            <h3>Latest Post</h3>
-            <p>{% show_latest_post 3 %}</p>
-            {% endcomment %}
+          {% comment %}
+          <div class="bg-slate-200 rounded-lg border sm:w-10 w-full">
             <h3>Most Commented Post</h3>
             {% get_most_commented_post as most_commented_post %}
             {% for post in most_commented_post %}
@@ -89,6 +84,7 @@
             </li>
             {% endfor %}
           </div>
+          {% endcomment %}
         {% block content %}
         {% endblock %}
     </main>
