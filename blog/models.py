@@ -27,6 +27,7 @@ class Comment(models.Model):
     post=models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
     name=models.CharField(max_length=100)
     body=models.TextField()
+    blog_author=models.ForeignKey('self',on_delete=models.CASCADE, null=True, blank=True)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
     is_active=models.BooleanField(default=True)
@@ -40,3 +41,6 @@ class Comment(models.Model):
     def __str__(self):
         return f'comment by {self.name} on {self.post}'
    
+#    get all replies by blog author
+    def get_replies(self):
+        return Comment.objects.filter(blog_author=self)
