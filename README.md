@@ -34,8 +34,10 @@ https://blog-app-lpq3.onrender.com
 
 ![Screenshot 2023-10-10 at 07-23-20 Bridge Blog](https://github.com/zablon-oigo/blog/assets/143833326/25bea062-f598-44f1-812a-adf9fbda60c4)
 
-![Screenshot 2023-10-10 at 07-21-39 Login Blog](https://github.com/zablon-oigo/blog/assets/143833326/2122af7c-4ff2-4657-a36a-6bb88ecd0c7e)
+![Screenshot 2023-10-15 at 08-57-01 Login Blog](https://github.com/zablon-oigo/blog/assets/143833326/7558e162-6a14-4a4b-af39-77db6f60eac9)
+
 
 ![Screenshot 2023-10-10 at 07-21-12 Login Blog](https://github.com/zablon-oigo/blog/assets/143833326/1bd6431d-c577-46d7-a6a2-4c7e15fbd18e)
+![Screenshot 2023-10-15 at 08-57-17 Login Blog](https://github.com/zablon-oigo/blog/assets/143833326/722415f2-68ed-4fb1-9674-bb9901778767)
 
-![Screenshot 2023-10-10 at 07-20-46 Home Blog](https://github.com/zablon-oigo/blog/assets/143833326/6f9480e8-0521-447d-a02d-98d414945d3a)
+
