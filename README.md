@@ -9,6 +9,11 @@ The  Blog Project is a dynamic and feature-rich web application designed to simp
 
 https://blog-app-lpq3.onrender.com
 
+## Tech Stack
+
+**Client:**  TailwindCSS, Html, Javascript,
+
+**Server:** Python, Django
 
 ## Screenshots
 ![Screenshot 2023-10-10 at 07-32-03 Home Blog](https://github.com/zablon-oigo/blog/assets/143833326/5f999432-8383-48d5-b58b-05cf04147406)
